@@ -31,8 +31,8 @@ DEV:
     IMAGE_PATH: /Users/huanzhang/ApiTestFrameWork-master/conf/shell
 
 QA:
-    - username: admin
-      password: 123456
+    - username: huan.zhang@thoughtworks.com
+      password: 12345678
       client_secret: 4f136a75-0592-4b2e-844b-3116331d9832
       url: b2b-qa.digitalshell.com.cn
       url_direct: shell-sso-qa

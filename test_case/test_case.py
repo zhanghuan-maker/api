@@ -55,7 +55,10 @@ class Test(unittest.TestCase):
         if testcase not in self.saves_eve.keys():
             self.saves_eve[testcase] = {}
         #保存变量
-        value = jsonpath.jsonpath(source,jexpr)[0]
+        if jexpr.startswith('$'):
+            value = jsonpath.jsonpath(source,jexpr)[0]
+        else:
+            value = eval(jexpr)
         if key.startswith("authorization"):
             self.saves_eve[testcase][key] = "Bearer "+ str(value)
         else:
@@ -248,7 +251,7 @@ class Test(unittest.TestCase):
             # 遍历saves
             for save in saves.split(";"):
                 # 切割字符串 如 key=$.data
-                if save.split("=")[1].startswith("$."):
+                if save.split("=")[1].startswith("$.") or save.split("=")[1].startswith("res.json()"):
                     self.save_data_eve(res.json(), save.split("=")[0], save.split("=")[1],testcase)
                 elif save.split("=")[1].startswith("text"):
                     self.saves_eve[testcase] = {}
@@ -337,9 +340,10 @@ class Test(unittest.TestCase):
         cookies = eval(cookies) if cookies else cookies
         body = eval(body) if body else body
 
-        if 'content-type' in headers.keys():
-            if headers['content-type'] == 'application/json;charset=UTF-8':
-                body =json.dumps(body)
+        if headers != '':
+            if 'content-type' in headers.keys():
+                if headers['content-type'] == 'application/json;charset=utf-8' or headers['content-type'] == 'application/json;charset=UTF-8':
+                    body =json.dumps(body)
         file = eval(file) if file else file
 
 
@@ -358,11 +362,12 @@ class Test(unittest.TestCase):
             # 遍历saves
             for save in after_saves.split(";"):
                 # 切割字符串 如 key=$.data
-                if save.split("=")[1].startswith("$."):
+                if save.split("=")[1].startswith("$.") or save.split("=")[1].startswith("res.json()"):
                     self.save_data_eve(res.json(), save.split("=")[0], save.split("=")[1],testcase)
                 elif save.split("=")[1].startswith("text"):
                     self.saves_eve[testcase]={}
                     self.saves_eve[testcase][save.split("=")[0]] = "Bearer " + str(res.text)
+
 
         if after_verify:
             self.verify_process(after_verify,testcase)
