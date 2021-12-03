@@ -188,8 +188,8 @@ class Test(unittest.TestCase):
                 actual = ver.split("=")[0]
                 self.request.assertEqualsValue(eval(actual), expect)
             elif ver.startswith("res.json()") and '!~' in ver:
-                expect = ver.split("=")[1]
-                actual = ver.split("=")[0]
+                expect = ver.split("!~")[1]
+                actual = ver.split("!~")[0]
                 self.request.assertNotEqualsValue(eval(actual), expect)
 
     def ttestonework(self,ONE_WORKER_NUM,LOOP_SLEEP,url, method, headers, cookies, params, body, file, verify, saves,after_verify,ERROR_NUM,testcase):
