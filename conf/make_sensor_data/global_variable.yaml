@@ -1,10 +1,10 @@
 DEV:
   - username: admin
     password: 123456
-    authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvM0ZFdjBwdVd0Yk5ueTdseTBNZ21NU0lyWEdzIiwiaWQiOiJjMmEyZmY5Zi0zZmFhLTQ0YzctOTM1My0xODc3MjExMTVhYjQiLCJVU0VSX0lEIjoiZmY0MzY5OWMtYWZlMi00NmZhLTlkNTMtMWQyMjgyMzJlYzA0IiwiRElTVFJJQlVUT1JfSUQiOjEwMCwiRkFDVE9SWV9JRCI6ImQzYTkyNzM0LTU4ZTEtNGJlOC1hOWEyLTUyMWMxNTU0YjVhOCIsIlBVQkxJQ19XRUNIQVRfSUQiOiJ3eDM3M2M0ZDFjYzRkNWViZWIiLCJYQ1hfT1BFTl9JRCI6Im9xcHdnNVJqZGNCMWhJUmptSXFDNEszMWhyRDAiLCJYQ1hfQVBQX0lEIjoid3hkM2ZkYTUwMzcyNTUxMGRlIiwiUFVCTElDX1dFQ0hBVF9VU0VSX05BTUUiOiJnaF9mYjgzMmI5ZTU1MDQiLCJOSUNLX05BTUUiOiIiLCJOQU1FIjoi5byg5LiJIiwiSVNfTkFNRV9BTkRfUEhPTkVfU0VUIjp0cnVlLCJzY29wZXMiOlsiQURNSU4iLCJTVVBFUl9VU0VSIl0sIkdFTkVSQVRFX0lOU1RBTlQiOiIyMDIyLTAyLTI4VDA4OjQ1OjQxLjI0OFoiLCJJU19QUklWQUNZX1BPTElDSUVTX0FHUkVFRCI6dHJ1ZSwiaXNzIjoic2hlbGwiLCJpYXQiOjE2NDYwMzc5NDEsImV4cCI6MTY0ODYyOTk0MX0.gp2eSuFlaa60XDUoaG27Wk-FPyNpuNLdvpWFTtsxQzajRTpW2cweAnkgsEjS8HrZjhEMDNqRXx1ddmGlnhUWmg
     client_secret: b71ba6e5-8e46-458c-9ee1-abe255145ee5
     url: b2b-dev.digitalshell.com.cn
     url_direct: shell-sso-dev
+    equipmentId: f091b770-eec9-401c-93c6-91d3662e0eb9
     B2B_DB_NAME: b2bdevnew%b2b
     B2B_DB_PASSWORD: ywgmS61Mb9GT
     B2B_DB_IP: b2bdevnew.mysqldb.chinacloudapi.cn
@@ -36,6 +36,7 @@ QA:
       client_secret: 4f136a75-0592-4b2e-844b-3116331d9832
       url: b2b-qa.digitalshell.com.cn
       url_direct: shell-sso-qa
+      equipmentId: 4c68373f-c8ef-4c00-a94e-6ce36addad7b
       B2B_DB_NAME: b2bdevnew%b2b
       B2B_DB_PASSWORD: ywgmS61Mb9GT
       B2B_DB_IP: b2bdevnew.mysqldb.chinacloudapi.cn
@@ -67,6 +68,7 @@ UAT:
     client_secret: 8ac575eb-0d5b-4862-bc9b-5ed35fab4cb0
     url: b2b-uat.digitalshell.com.cn
     url_direct: shell-sso-uat
+    equipmentId: 56bf29a3-5884-47ee-96c8-0e907ab7efeb
     B2B_DB_NAME: b2bdevnew%b2b
     B2B_DB_PASSWORD: ywgmS61Mb9GT
     B2B_DB_IP: b2bdevnew.mysqldb.chinacloudapi.cn
@@ -95,10 +97,10 @@ UAT:
 PROD:
   - username: xcli@thoughtworks.com
     password: Xcli@thoughtworks.com1
-    authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvNkFKLTVrUzAtaDR3WTU2c0xZRTFMX21sa3QwIiwiaWQiOiI2M2I3YTNiZC00YTM2LTQ4ZmYtOWU4Yi1mMWM1YTQ1ODI5YzciLCJVU0VSX0lEIjoiYWJjMjY5MzQtZTY2NS00MzBhLTg2YjgtZDBhMmQyN2ViZDIyIiwiRElTVFJJQlVUT1JfSUQiOjEzNiwiRkFDVE9SWV9JRCI6ImQzYTkyNzM0LTU4ZTEtNGJlOC1hOWEyLTUyMWMxNTU0YjRhOCIsIlBVQkxJQ19XRUNIQVRfSUQiOiJ3eGY3NjE3Nzk4YWI5NWUyZjkiLCJYQ1hfT1BFTl9JRCI6Im9Va08tNGxoUjNfS3JvTVVvUHpBVUFBaUtBQzAiLCJYQ1hfQVBQX0lEIjoid3g5ZTQ0MTU5MWJhN2ExYjE2IiwiUFVCTElDX1dFQ0hBVF9VU0VSX05BTUUiOiJnaF83NmUyMmYxZTE0MjQiLCJOSUNLX05BTUUiOiJVTktOT1dOX05JQ0tOQU1FIiwiTkFNRSI6IuW8oOasonR35rWL6K-VIiwiSVNfTkFNRV9BTkRfUEhPTkVfU0VUIjp0cnVlLCJzY29wZXMiOlsiQURNSU4iXSwiR0VORVJBVEVfSU5TVEFOVCI6IjIwMjEtMDktMTRUMDg6MTQ6MjUuNjE2WiIsIklTX1BSSVZBQ1lfUE9MSUNJRVNfQUdSRUVEIjp0cnVlLCJpc3MiOiJzaGVsbCIsImlhdCI6MTYzMTYwNzI2NSwiZXhwIjoxNjMxNjE0NDY1fQ.R3QmcCRnCj5nw5aFSnR-G_9FKEZRoyanZpIY9CuWFtbhQnG5kKhjC5UFqfn8GcJUH1YwZaZ9nlQjoNEQKc3lZA
     client_secret: 6526ddef-5bbf-44ef-b1a7-1a154da04719
     url: b2b.digitalshell.com.cn
     url_direct: shell-sso
+    equipmentId: 4cac1de0-f910-46d7-a200-5e6a24a908fa
     B2B_DB_NAME: b2bprodnew%readonly
     B2B_DB_PASSWORD: 297readBc0i1St
     B2B_DB_IP: b2bprodnew.mysqldb.chinacloudapi.cn

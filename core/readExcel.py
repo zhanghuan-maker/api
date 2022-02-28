@@ -16,6 +16,7 @@ import re
 from core.generate_yaml import *
 
 
+
 EXPR = '\@\{(.*?)\}'
 def getdata1(description,Case):
     # 读取yaml的值

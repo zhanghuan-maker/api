@@ -130,8 +130,6 @@ class Test(unittest.TestCase):
         :return:
         '''
         for mongodb in [i for i in mongodbds.split(";") if i != ""]:
-
-
             result = db_connect.execute_mongodb(mongodb)
             logger.info("执行mongodb====>{}，影响条数:{}".format(mongodb,result))
             if mongodb.startswith("db"):
@@ -346,11 +344,12 @@ class Test(unittest.TestCase):
             if 'content-type' in headers.keys():
                 if headers['content-type'] == 'application/json;charset=utf-8' or headers['content-type'] == 'application/json;charset=UTF-8':
                     body =json.dumps(body)
+                    print(body)
         file = eval(file) if file else file
 
 
-
-        self.run_work(THREAD_NUM,ONE_WORKER_NUM,LOOP_SLEEP,url, method, headers, cookies, params, body, file, verify,saves,after_verify,testcase)
+        for i in range(2100):
+            self.run_work(THREAD_NUM,ONE_WORKER_NUM,LOOP_SLEEP,url, method, headers, cookies, params, body, file, verify,saves,after_verify,testcase)
 
 
 
