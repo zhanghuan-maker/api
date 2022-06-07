@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export Environment='prod'
-export Case='shell_factory_wechat'
+export Case='checkpointFactory'
 
 /usr/bin/python3 ./runCase.py
 
